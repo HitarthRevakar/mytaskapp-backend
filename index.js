@@ -14,7 +14,10 @@ app.use(cors({
 
 app.use(express.json());
 
-// GET Data 
+//public
+app.use(express.static('public'));
+
+// main route 
 app.use('/', todoRoutes);
 
 const PORT = process.env.PORT || 5000;
