@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors({
-    origin: 'https://mytaskapp-frontend.vercel.app/',
+    origin: ["http://localhost:5173",'https://mytaskapp-frontend.vercel.app/'],
     credentials: true
 }));
 
