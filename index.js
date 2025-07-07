@@ -1,12 +1,12 @@
-const express = require('express');
 require('dotenv').config();
+const express = require('express');
 const todoRoutes = require('./routes/todoRouter');
-const cors = require('cors');
-
-
 const app = express();
+
+// ------------ to connect frontend and backend ----------- //
+const cors = require('cors');
 app.use(cors({
-  origin: ["http://localhost:5173", `${process.env.FRONTEND_URL}`],
+  origin: [process.env.FRONTEND_URL_LOCAL, process.env.FRONTEND_URL_PRO],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));

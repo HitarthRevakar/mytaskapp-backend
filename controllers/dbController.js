@@ -26,6 +26,15 @@ exports.deleteTodo = async (req,res) => {
     deleted ? res.json({ deleted, message: 'Delete Successfully!' }) : res.status(400).json({message:'Deletion Failed !'})
 }
 
+exports.clearAllTodos = async (req, res) => {
+  try {
+    const count = await model.deleteAllTodos();
+    res.status(200).json({ message: 'All tasks deleted successfully!', deletedCount: count });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to delete all tasks' });
+  }
+};
+
 
 
 

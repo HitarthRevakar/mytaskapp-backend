@@ -13,4 +13,6 @@ const deleteTodo = async (id) => {
   return count > 0; 
 };
 
-module.exports = { getTodos, getTodoById, createTodo, updateTodo, deleteTodo };
+const deleteAllTodos = () => { return db('todos').del();};
+
+module.exports = { getTodos, getTodoById, createTodo, updateTodo, deleteTodo, deleteAllTodos };
